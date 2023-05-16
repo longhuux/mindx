@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    display: flex;
+    background-color: green;
+    height: auto;
+    font-weight: bold;
+    padding: 20px 20px;
+    align-items: center;
+}
+.logo{
+    width: 40%;
+    font-size: 25px;
+}
+.menu{
+    display: flex;
+    padding-left: 4px;
+}
+.menu p{
+    margin-right: auto;
+    font-size: 20px;
+    border-right: 1px solid black;
+    padding: 0 35px;
+    cursor: pointer;
+}
+.no-border{
+    border-right: 0px !important;
+}
+.welcome{
+    background-color: black ;
+    color: white;
+}
+.txt_hi{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+    padding: 30px 30px;    
+}
+.content{
+    padding: 30px 45px;
+}
+.about_me{
+    text-align: center;
+    color: lawngreen;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+.wrap_content_top{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    align-items: center;
+}
+.wrap_content_img{
+    object-fit: cover;
+    width: 30%;
+}
+.img_top{
+    width: 100%;
+
+}
+.content_about_me{
+    width: 60%;
+    
+}
+.content_about_me p{
+    margin-bottom: 20px;
+}
+.projects{
+
+}
+.achievements{
+
+}
+.contact{
+
+}
+.footer{
+
+}
