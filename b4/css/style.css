@@ -49,5 +49,18 @@ body{
 .card__desc{
     color: rgb(142, 146, 148);
     font-size: 15px;
-    margin-bottom: 38px;
+    margin-bottom: 15px;
+}
+
+.card__btn{
+    display: flex;
+    justify-content: space-between;
+    margin: ;
+}
+
+.btn-cancel{
+    width: 30%;
+}
+.btn-submit{
+    width: 30%;
 }
