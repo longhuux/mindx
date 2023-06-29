@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>  
+  <div class="header">
+    <div class="logo">
+      <a href="index.html">ARTCRAFT.</a>
+    </div>
+    
+    <div class="menu">
+      <li><a href="#">Sculpture</a> </li>
+      <li><a href="#">Frames</a></li>
+      <li><a href="#">Relief</a></li>
+      <li><a href="#">Statue</a></li>
+      <li><a href="#">More</a></li>
+    </div>
+    <div class="menu1">
+      <li><a href="#"> <i class="bi bi-search"></i></a> </li>
+      <li><a href="#"> <i class="bi bi-person"></i></a> </li>
+      <li><a href="#"> <i class="bi bi-cart"></i></a> </li>
+
+    </div>
+  </div>
+
+
+    <div class="main">
+
+        <form action="" method="POST" class="form" id="regForm">
+            <h1 class="heading">Registration</h1>
+            <p class="desc">If you already have an account with us, please login at the 
+              <a href="login.html">login page.</a>
+            </p>
+  
+          <div class="spacer"></div>
+  
+          <div class="form-group">
+            <label for="fullname" class="form-label">Fullname</label>
+            <input id="fullname" name="fullname" type="text" placeholder="Fullname" class="form-control">
+            <span class="form-message"></span>
+          </div>
+  
+          <div class="form-group">
+            <label for="email" class="form-label">E-Mail</label>
+            <input id="email" name="email" type="text" placeholder="E-Mail" class="form-control">
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="telephone" class="form-label">Telephone</label>
+            <input id="telephone" name="telephone" type="tel" placeholder="Telephone" class="form-control">
+            <span class="form-message"></span>
+          </div>
+  
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" name="password" type="password" placeholder="Password" class="form-control">
+            <span class="form-message"></span>
+          </div>
+  
+          <div class="form-group">
+            <label for="password_confirmation" class="form-label">Confirm Your Password</label>
+            <input id="password_confirmation" name="password_confirmation" placeholder="Password Confirm" type="password" class="form-control">
+            <span class="form-message"></span>
+          </div>
+          <div class="submit">
+              <button class="form-submit">Submit</button>
+          </div>
+        </form>
+  
+  
+      </div>
+
+      <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-s">
+                    <h1>ARTCRAFT.</h1>
+                 <p>There are many variations of passages of look even slightly believable.</p>
+                 <div class="social-links">
+                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-youtube"></i></a>
+                      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                 </div>
+             </div>
+             <div class="footer-col">
+                 <h4>Information</h4>
+                 <ul>
+                     <li><a href="#">About Us</a></li>
+                     <li><a href="#">Delivery Information</a></li>
+                     <li><a href="#">Privacy Policy</a></li>
+                     <li><a href="#">Terms & Conditions</a></li>
+                     <li><a href="#">Site Map</a></li>
+                 </ul>
+             </div>
+             <div class="footer-col">
+                 <h4>Extras</h4>
+                 <ul>
+                     <li><a href="#">Brands</a></li>
+                     <li><a href="#">Gift Certificates</a></li>
+                     <li><a href="#">Affiliate</a></li>
+                     <li><a href="#">Specials</a></li>
+                     <li><a href="#">Contact Us</a></li>
+                 </ul>
+             </div>
+             <div class="footer-col">
+                 <h4>follow us</h4>
+                 <div class="store-infor">
+                     <p><i class="bi bi-geo-alt-fill"></i> Artcraft - Art Store<br> 
+                         &emsp;&emsp;United States</p>
+                     <p><i class="bi bi-telephone-fill"></i>	000-000-0000</p>
+                     <p><i class="bi bi-printer-fill"></i> 123456</p>
+                     <p><i class="bi bi-envelope-fill"></i> sales@yourcompany.com</p>
+                 </div>
+                 
+             </div>
+            </div>
+        </div>
+   </footer>
+      <script src="./src/validator.js"></script>
+      <script>
+  
+        document.addEventListener('DOMContentLoaded', function () {
+          // Mong muốn của chúng ta
+          Validator({
+            form: '#regForm',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+              Validator.isRequired('#fullname', 'Please enter your full name'),
+              Validator.isEmail('#email'),
+              Validator.minLength('#password', 8),
+              Validator.minLength('#telephone', 10),
+              Validator.isRequired('#password_confirmation'),
+              Validator.isConfirmed('#password_confirmation', function () {
+                return document.querySelector('#regForm #password').value;
+              }, 'Password confirmation does not match password!')
+            ],
+            onSubmit: function (data) {
+              // Call API
+              console.log(data);
+            }
+          });
+        });
+  
+      </script>
+</body>
+</html>
